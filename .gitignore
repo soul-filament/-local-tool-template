@@ -1,3 +1,4 @@
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -5,13 +6,16 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
 node_modules
 dist
 dist-ssr
+dist-electron
+release
 *.local
-lib
-.vscode/*
-!.vscode/extensions.json
+
+# Editor directories and files
+.vscode/.debug.env
 .idea
 .DS_Store
 *.suo
@@ -19,5 +23,15 @@ lib
 *.njsproj
 *.sln
 *.sw?
-coverage
+
+#lockfile
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+data
 .env
+drizzle
