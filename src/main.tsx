@@ -3,25 +3,30 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css'
 import { SideBar } from './components/sidebar';
+import { generateRoutingForDB } from './pages/db/routing';
 import { HomePage } from './pages/home';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <a href={`/test/a/b`}>Your Name123</a>,
-  },
-  {
-    path: "/test/a/b",
-    element: <HomePage/>,
-  },
+    path: "/", 
+    element: <SideBar/>,
+    children: [
+      { 
+        path: "/table", 
+        children: generateRoutingForDB()
+      },
+      { 
+        path: "/home", 
+        element: <HomePage />
+      }
+    ]
+  }
 ]);
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <SideBar>
-      <RouterProvider router={router} />
-    </SideBar>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
 

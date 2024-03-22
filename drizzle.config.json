@@ -1,8 +1,8 @@
 {
-    "schema": "./src/database/schema.ts",
+    "schema": "./src/database/apis/*/*.table.ts",
     "out": "./drizzle",
     "dbCredentials": {
-        "url": "./data/myridian.db"
+        "url": "./data/database.db"
     },
     "driver": "better-sqlite"
 }
